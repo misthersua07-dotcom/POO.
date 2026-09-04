@@ -13,7 +13,7 @@ public class Ejercicio3 {
     }
 
     static double dividir(double a, double b) {
-        // Validacion de informacion: no se puede dividir por cero
+        
         if (b == 0) {
             System.out.println("Error: no se puede dividir por cero");
             return 0;
@@ -40,7 +40,6 @@ public class Ejercicio3 {
         double resultadoDivision = dividir(a, b);
         mostrarResultado("Division", resultadoDivision);
 
-        // Probamos tambien la division por cero para validar
         mostrarResultado("Division por cero", dividir(a, 0));
     }
 }
