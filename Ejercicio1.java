@@ -4,7 +4,7 @@ import java.util.Random;
 public class Ejercicio1 {
     public static void main(String[] args) {
 
-        // Array de nombres para generar personas aleatorias
+        
         String[] nombres = {
             "Ana", "Luis", "Carlos", "Maria", "Pedro",
             "Laura", "Jose", "Sofia", "Andres", "Camila"
@@ -13,7 +13,7 @@ public class Ejercicio1 {
         Random random = new Random();
         ArrayList<Persona> personas = new ArrayList<>();
 
-        // Creamos 10 personas con edad aleatoria (RECORRIDO DE ARRAY)
+       
         for (int i = 0; i < nombres.length; i++) {
             int edad = random.nextInt(50) + 5; // edades entre 5 y 54
             String documento = "10" + (1000 + i);
@@ -23,7 +23,7 @@ public class Ejercicio1 {
 
         System.out.println("=== Lista de personas ===");
 
-        // Recorremos el ArrayList (RECORRIDO DE ARRAYLIST)
+       
         for (Persona p : personas) {
             p.mostrarInformacion();
 
@@ -37,13 +37,13 @@ public class Ejercicio1 {
     }
 }
 
-// Clase Persona: atributos privados = ENCAPSULAMIENTO
+
 class Persona {
     private String nombre;
     private int edad;
     private String documento;
 
-    // Constructor: inicializa los 3 atributos
+   
     public Persona(String nombre, int edad, String documento) {
         this.nombre = nombre;
         this.edad = edad;
@@ -63,7 +63,7 @@ class Persona {
     }
 
     public void setEdad(int edad) {
-        // Validacion de informacion: la edad no puede ser negativa
+        
         if (edad >= 0) {
             this.edad = edad;
         } else {
@@ -80,12 +80,12 @@ class Persona {
         this.documento = documento;
     }
 
-    // Muestra los datos de la persona
+   
     public void mostrarInformacion() {
         System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | Documento: " + documento);
     }
 
-    // Retorna true si la persona es mayor de edad (edad > 18)
+   
     public boolean esMayorDeEdad() {
         return edad > 18;
     }
