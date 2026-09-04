@@ -12,7 +12,7 @@ public class Ejercicio2 {
         Random random = new Random();
         ArrayList<Empleado> empleados = new ArrayList<>();
 
-        // Creamos 10 empleados, alternando el tipo (RECORRIDO DE ARRAY)
+       
         for (int i = 0; i < nombres.length; i++) {
             if (i % 2 == 0) {
                 long salario = 1000000 + random.nextInt(500000);
@@ -25,8 +25,6 @@ public class Ejercicio2 {
             }
         }
 
-        // Recorremos el ArrayList. Aqui se ve el POLIMORFISMO:
-        // cada objeto ejecuta SU PROPIA version de calcularSalario()
         int contador = 1;
         for (Empleado e : empleados) {
             if (e instanceof EmpleadoPorHoras eh) {
@@ -61,18 +59,16 @@ class Empleado {
         return salario;
     }
 
-    // Metodo que las clases hijas van a SOBREESCRIBIR
     public long calcularSalario() {
         return salario;
     }
 }
 
-// HERENCIA: EmpleadoTiempoCompleto hereda de Empleado
 class EmpleadoTiempoCompleto extends Empleado {
     private long bonificacion;
 
     public EmpleadoTiempoCompleto(String nombre, long salario, long bonificacion) {
-        super(nombre, salario); // llama al constructor del padre
+        super(nombre, salario); 
         this.bonificacion = bonificacion;
     }
 
@@ -87,7 +83,6 @@ class EmpleadoTiempoCompleto extends Empleado {
     }
 }
 
-// HERENCIA: EmpleadoPorHoras hereda de Empleado
 class EmpleadoPorHoras extends Empleado {
     private int horasTrabajadas;
     private long valorHora;
@@ -106,7 +101,6 @@ class EmpleadoPorHoras extends Empleado {
         return valorHora;
     }
 
-    // SOBREESCRITURA (override) del metodo del padre
     @Override
     public long calcularSalario() {
         return horasTrabajadas * valorHora;
